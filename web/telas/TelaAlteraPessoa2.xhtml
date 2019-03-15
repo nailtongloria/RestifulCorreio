@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../css/style.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+
+        <h:form>
+            <div class="container">
+                <div class="form-group">
+                    <h:outputLabel value="cep" />
+                    <h:inputText   value="#{pessoaBeanAlterar.cep}" class="form-control"  />
+                    <h:commandButton value="encontra cep"  action="#{pessoaBeanAlterar.consultaCep()}" class="btn btn-primary" />
+                </div>
+            </div>
+        </h:form>
+        <h:form >
+
+            <div class="container">
+                <div class="form-group">
+                    <h:outputLabel value="rua"   />
+                    <h:inputText   value="#{pessoaBeanAlterar.l.logradouro}" class="form-control"  />
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel value="cep"   />
+                    <h:inputText   value="#{pessoaBeanAlterar.l.cep}" class="form-control"  />
+
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel value="ibge"   />
+                    <h:inputText   value="#{pessoaBeanAlterar.l.cidade.ibge}" class="form-control"  />
+
+                </div>
+
+                <div class="form-group">
+                    <h:outputLabel value="bairro"   />
+                    <h:inputText   value="#{pessoaBeanAlterar.l.bairro}" class="form-control"  />
+
+                </div>
+                <div class="form-group">
+                    <h:outputLabel value="cidade"   />
+                    <h:inputText   value="#{pessoaBeanAlterar.l.cidade.nome}" class="form-control"  />
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <h:outputLabel value="nome"   />
+                    <h:inputText   value="#{pessoaBeanAlterar.pessoa.nome}" class="form-control"  />
+
+                </div>
+
+
+                <div class="form-group">
+                    <h:outputLabel value="ocupacao"   />
+                    <h:inputText   value="#{pessoaBeanAlterar.pessoa.ocupacao}" class="form-control"  />
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <h:outputLabel for="data" value="Data de Nascimento:"/>
+                    <h:inputText id="data" value="#{pessoaBeanAlterar.data}">
+                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                    </h:inputText>
+                </div>
+
+
+
+
+                <div id="actions" class="row">
+                    <div class="col-md-3" >
+                        <h:commandButton value="alterar dados"  action="#{pessoaBeanAlterar.alterarPessoa()}"  class="btn btn-primary btn-space"/>
+                        <h:commandButton value="tela listar"  class="btn btn-primary btn-space"/>
+                    </div>
+                </div>
+            </div>
+
+        </h:form>
+    </h:body>
+</html>
+

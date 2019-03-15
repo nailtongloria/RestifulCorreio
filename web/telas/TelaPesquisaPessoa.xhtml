@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Tela Pesquisa</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../css/style.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="container">
+                <div class="form-group">
+                    <h:outputLabel value="nome"/>
+                    <h:inputText   value="#{pessoaBeanPesquisa.pessoa.nome}" class="form-control" />
+
+                    <h:commandButton value="pesquisarCliente" action="#{pessoaBeanPesquisa.pesquisarPessoa()}" styleClass="btn btn-danger" />
+                </div>
+            </div>
+        </h:form>
+
+        <div class="container">
+            <h:form>
+
+                <h:dataTable  value="#{pessoaBeanPesquisa.pessoas}"   var="pessoaLinha" styleClass="table" >
+
+                    <h:column>
+                        <f:facet name="header"> Nome </f:facet>
+
+                        #{pessoaLinha.nome}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Data</f:facet>
+                        <h:outputText value="#{pessoaLinha.data.time}">
+                            <f:convertDateTime pattern="dd/MM/yyyy" />
+                        </h:outputText>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header"> Idade </f:facet>
+
+                        #{pessoaLinha.idade}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header"> Sexo </f:facet>
+
+                        #{pessoaLinha.sexo.sexo}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header"> Ocupação </f:facet>
+
+                        #{pessoaLinha.ocupacao}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Excluir</f:facet>
+                        <h:commandLink value="excluir" action="#{pessoaBean.excluir(pessoaLinha)}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Editar2</f:facet>
+                        <h:commandLink value="editar2" action="#{pessoaBean.chamaPaginaEditar()}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Detalhe</f:facet>
+                        <h:commandLink value="Detalhe" action="#{pessoaBeanPesquisa.chamaPaginaDetalhe()}" styleClass="btn btn-danger">
+                            <f:setPropertyActionListener value="#{pessoaLinha}" target="#{pessoaBeanPesquisa.pessoa}"/>
+                        </h:commandLink>
+                    </h:column>
+
+
+
+
+
+                </h:dataTable>
+
+            </h:form>
+        </div>
+
+
+    </h:body>
+</html>
+

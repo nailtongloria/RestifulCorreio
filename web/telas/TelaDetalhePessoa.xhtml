@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../css/style.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div class="container">
+                <div class="col-md-8">
+                    <h:outputLabel  for="logradouro" value="rua"   />
+                    <h:outputLabel id="logradouro" value="#{pessoaBeanDetalhes.pessoa.logradouro}"/>
+                </div>
+
+                <div class="col-md-8">
+                    <h:outputLabel  for="cep" value="cep"   />
+                    <h:outputLabel id="cep" value="#{pessoaBeanDetalhes.pessoa.logradouro.cep}"/>
+
+                </div>
+
+                <div class="col-md-8">
+                    <h:outputLabel for="ibge" value="ibge"   />
+                    <h:outputLabel id="ibge" value="#{pessoaBeanDetalhes.pessoa.cidade.ibge}"/>
+
+                </div>
+
+                <div class="col-md-8">
+                    <h:outputLabel   for="bairro" value="bairro"  />
+                    <h:outputLabel id="bairro" value="#{pessoaBeanDetalhes.pessoa.logradouro.bairro}"/>
+
+                </div>
+                <div class="col-md-8">
+                    <h:outputLabel  for="cidade" value="cidade"   />
+                    <h:outputLabel id="cidade" value="#{pessoaBeanDetalhes.pessoa.cidade.nome}"/>
+
+                </div>
+
+                <div class="col-md-8">
+                    <h:outputLabel for="estado"  value="Estados" />
+                    <h:outputLabel id="estado" value="#{pessoaBeanDetalhes.pessoa.cidade.estado.nome}"/>
+                </div>
+
+                <div class="col-md-8">
+                    <h:outputLabel value="nome"   />
+                    <h:outputLabel id="nome" value="#{pessoaBeanDetalhes.pessoa.nome}"/>
+
+                </div>
+
+
+                <div class="col-md-8">
+                    <h:outputLabel  for="nome" value="ocupacao"   />
+                    <h:outputLabel id="ocupacao" value="#{pessoaBeanDetalhes.pessoa.ocupacao}"/>
+
+                </div>
+
+               
+
+
+
+                <div class="col-md-8">
+                    <h:outputLabel  for="sexo" value="Sexos" />
+                    <h:outputLabel id="sexo" value="#{pessoaBeanDetalhes.pessoa.sexo.sexo}"/>
+                </div>
+
+                   <div id="actions" class="row">
+                    <div class="col-md-3" >
+                        <h:commandButton value="tela alterar "  action="#{pessoaBeanAlterar.chamaPaginaEditar()}"  class="btn btn-primary btn-space"/>
+                        <h:commandButton value="tela listar"  class="btn btn-primary btn-space"/>
+                    </div>
+                </div>
+
+            </div>
+        </h:form>
+
+    </h:body>
+</html>
+
